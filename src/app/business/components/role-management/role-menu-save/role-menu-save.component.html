@@ -1,0 +1,52 @@
+<div class="p-grid">
+  <div class="p-col-2">2</div>
+  <div class="p-col-6">6</div>
+  <div class="p-col-4">4</div>
+</div>
+
+<div class="p-grid">
+  <div class="ui-g-12 smr-form">
+    <div class="ui-g-12">
+      <div class="ui-g-3">
+        <label for="role">Role</label>
+      </div>
+      <div class="ui-g-9 ui-fluid">
+        <p-autoComplete id="role" [(ngModel)]="role" [suggestions]="roles" field="roleName"
+                        (completeMethod)="findAllRole()" [minLength]="1" [dropdown]="true" styleClass="wid100"></p-autoComplete>
+      </div>
+    </div>
+  </div>
+  <div class="ui-g-12 smr-form">
+    <div style="width:150px; margin-bottom: 5px">
+      <button type="button" pButton icon="fa fa-plus" (click)="addData()" label="Add Menu"></button>
+    </div>
+    <div class="smr-table">
+      <p-table [value]="menuDetails" selection="false" [paginator]="true" [rows]="2" [pageLinks]="5" [totalRecords]="menuDetails.length">
+        <ng-template pTemplate="header">
+          <tr>
+            <th style="width:3em">No.</th>
+            <th>Menu</th>
+            <th style="width:5em">Action</th>
+          </tr>
+        </ng-template>
+        <!--<ng-template pTemplate="body" let-rowData let-i="rowIndex" let-branchCluster>
+          <tr [pSelectableRow]="rowData">
+            <td style="text-align: center">{{(i+1)}}</td>
+            <td class="ui-fluid" style="text-align: center">
+              <p-autoComplete id="cluster" (onSelect)="actionSelectMenu(rowData, i)" [(ngModel)]="rowData" [suggestions]="menus" field="label" placeholder="Search Menu"
+                              (completeMethod)="findAllMenuChild()" [minLength]="1" [dropdown]="true" styleClass="wid100"></p-autoComplete>
+            </td>
+            <td style="text-align: center">
+              <button pButton type="button" class="ui-button-raised ui-button-danger" icon="pi pi-trash" style="margin-right: 5px" (click)="softDelete(rowData)"></button>
+            </td>
+          </tr>
+        </ng-template>-->
+      </p-table>
+    </div>
+  </div>
+  <div class="ui-g-12 smr-form">
+    <p-confirmDialog appendTo="body"></p-confirmDialog>
+    <button pButton type="button" class="ui-button-raised ui-button-danger" icon="fa fa-close" label="Cancel" (click)="cancel()" style="float:right;  width: 100px"></button>
+    <button pButton type="button" class="ui-button-raised ui-button-success" icon="fa fa-check" label="Save" (click)="actionRoleMenu()" style="float:right; margin-right: 5px; width: 100px"></button>
+  </div>
+</div>

@@ -1,32 +1,22 @@
 <mat-nav-list>
     <div class="profile-card">
-        <img src="../../../../../assets/spongebob_character.svg.png" alt="spongebob_character">
-        <div class="header">
-            <h2>Spongebob Square Pants</h2>
-        </div>
-        <h4>spongebob@krustykrab.com</h4>
+        <img src="../../../../../assets/profile-male-icon.png" alt="spongebob_character">
     </div>
-
+    <div class="header">
+      <h2>{{user.firstName}} {{user.lastName}}</h2>
+    </div>
     <mat-divider></mat-divider>
-
-    <h2 matSubheader><b>MAIN MENU</b></h2>
-
-    <a mat-list-item routerLinkActive="list-item-active" routerLink="/home">Dashboard</a>
-    <a mat-list-item routerLinkActive="list-item-active" routerLink="/home/posts">Posts</a>
-    <a mat-list-item routerLinkActive="list-item-active">Articles</a>
-
+    <h2 matSubheader><b>MAIN NAVIGATION</b></h2>
     <mat-divider></mat-divider>
+    <p-panelMenu [model]="menuItem" [multiple]="false"></p-panelMenu>
 
-    <h2 matSubheader>Tools</h2>
+    <!--<mat-divider></mat-divider>
+
+    <h2 matSubheader><b>Tools</b></h2>
 
     <a mat-list-item routerLinkActive="list-item-active">
         <mat-icon>import_contacts</mat-icon>
         Contacts
-    </a>
-
-    <a mat-list-item routerLinkActive="list-item-active">
-        <mat-icon>contact_phone</mat-icon>
-        Leads
-    </a>
+    </a>-->
 
 </mat-nav-list>

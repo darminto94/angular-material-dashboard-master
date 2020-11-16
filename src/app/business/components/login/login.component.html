@@ -1,17 +1,20 @@
 <div fxLayoutAlign="center center" fxFlexFill class="main-div">
     <mat-card fxFlex="20">
       <mat-toolbar color="primary">Login Page</mat-toolbar>
-      <form fxLayoutAlign="stretch" fxLayout="column" class="login-form">
+      <form fxLayoutAlign="stretch" fxLayout="column" class="login-form" [formGroup]="formGroup" (ngSubmit)="signIn()">
         <mat-form-field>
-          <input matInput placeholder="Username">
+          <input matInput placeholder="Username" formControlName="username" [ngClass]="{ 'ng-dirty ng-invalid': form.username.errors }">
           <mat-icon matSuffix>person</mat-icon>
         </mat-form-field>
-  
+
         <mat-form-field>
-          <input matInput type="password" placeholder="Password">
+          <input matInput type="password" placeholder="Password" formControlName="password" [ngClass]="{ 'ng-dirty ng-invalid': form.password.errors }">
           <mat-icon matSuffix>lock</mat-icon>
         </mat-form-field>
-        <button mat-raised-button type="submit" color="primary" routerLink="/home">Login</button>
+        <button mat-raised-button type="submit" color="primary">Login</button>
       </form>
+      <div class="ui-g-12">
+        <p-messages></p-messages>
+      </div>
     </mat-card>
   </div>

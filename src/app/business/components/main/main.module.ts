@@ -12,6 +12,7 @@ import { CardComponent } from '../dashboard/card/card.component';
 import { PieComponent } from '../dashboard/pie/pie.component';
 import { HighchartsChartModule } from 'highcharts-angular';
 import { AppMaterialModule } from 'src/app/library/config/app-material.module';
+import { AppPrimeNgModule } from 'src/app/library/config/app-prime-ng.module';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { AppMaterialModule } from 'src/app/library/config/app-material.module';
     CommonModule,
     RouterModule,
     AppMaterialModule,
+    AppPrimeNgModule,
     HighchartsChartModule
   ],
   exports: [

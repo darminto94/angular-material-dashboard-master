@@ -11,7 +11,9 @@ export class MainComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit() { }
+  ngOnInit() {
+    console.log("Token User ::::: "+sessionStorage.getItem("authToken"))
+  }
 
 
   sideBarToggler() {

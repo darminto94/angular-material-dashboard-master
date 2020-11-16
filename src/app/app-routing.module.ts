@@ -5,31 +5,33 @@ import { LoginComponent } from './business/components/login/login.component';
 import { MainComponent } from './business/components/main/main.component';
 import { PostsComponent } from './business/components/posts/posts.component';
 import { AuthGuard } from './library/config/auth.guard';
+import {RoleManagementComponent} from "./business/components/role-management/role-management.component";
 
 const routes: Routes = [
-  { 
-    path: 'home', 
+  {
+    path: 'home',
     component: MainComponent,
     canActivate: [AuthGuard],
     children: [
       { path: '', component: DashboardComponent},
       { path: 'posts', component: PostsComponent},
+      { path: 'role-management', component: RoleManagementComponent}
     ]
   },
-  { 
-    path: 'login', 
-    component: LoginComponent 
+  {
+    path: 'login',
+    component: LoginComponent
   },
 
   /*
     REDIRECT
   */
-  { 
-    path: '', 
+  {
+    path: '',
     redirectTo: '/login', pathMatch: 'full'
   },
-  { 
-    path: '**', 
+  {
+    path: '**',
     redirectTo: '/login', pathMatch: 'full'
   },
 ];
